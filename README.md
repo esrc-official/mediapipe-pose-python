@@ -33,8 +33,8 @@ pip install -r requirements_m1.txt
 ```
 
 ### Step 2: Install third-party libraries
-Please install third-party libraries using [requirements.txt](https://github.com/esrc_official/mediapipe-pose-python/blob/master/requirements.txt).
-If your environment is macos m1, you can use [requirements_m1.txt](https://github.com/esrc_official/mediapipe-pose-python/blob/master/requirements_m1.txt).
+Please install third-party libraries using [requirements.txt](https://github.com/esrc-official/mediapipe-pose-python/blob/master/requirements.txt).
+If your environment is macos m1, you can use [requirements_m1.txt](https://github.com/esrc-official/mediapipe-pose-python/blob/master/requirements_m1.txt).
 
 ```
 // Install third-party libraries (default)
@@ -52,7 +52,7 @@ First, cust
 Please copy dataset on `dataset/pose/videos`.
 If you change the directory or video extension, please set `configs/dataset_module/pose_custom_dataset.yaml`.
 
-![img](https://github.com/esrc_official/mediapipe-pose-python/blob/master/assets/dataset_directory.png).
+![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/dataset_directory.png).
 
 
 ## Run project
