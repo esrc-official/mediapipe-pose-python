@@ -1,9 +1,4 @@
 .DS_Store
 .idea
-*.csv
-*.mp4
-*.npy
-*.txt
-*.xml
 *__pycache__
 venv/
