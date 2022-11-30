@@ -6,6 +6,4 @@
 *.txt
 *.xml
 *__pycache__
-datasets/pose/videos/
-result/
 venv/
