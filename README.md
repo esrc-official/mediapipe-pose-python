@@ -84,18 +84,18 @@ Then, the results are saved on `logs/${now:%Y-%m-%d}/${now:%H-%M-%S}`.
 project tree
 
 ├─configs  
-│  ├─architecture_module
-│  ├─dataset_module  
+│  ├─architecture_module  
+│  ├─dataset_module    
 │  ├─hydra  
-│  ├─logger
-├─datasets
-│  ├─pose
-├─logs  
-├─scripts
-└─src  
-    ├─architecture_modules  
-    │  └─models  
-    ├─dataset_modules  
-    │  └─datasets  
-    ├─engine  
-    └─utils  
+│  ├─logger  
+├─datasets  
+│  ├─pose  
+├─logs   
+├─scripts  
+├─src  
+    ├─architecture_modules   
+    │  └─models   
+    ├─dataset_modules    
+    │  └─datasets   
+    ├─engine   
+    └─utils   
