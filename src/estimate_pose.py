@@ -4,7 +4,7 @@ import glob
 import timeit
 import pandas as pd
 
-# Video_dir = glob.glob('test/LSH/*.mp4')
+# Video_dir = glob.glob('videos/LSH/*.mp4')
 Video_dir = 0
 fourcc = cv2.VideoWriter_fourcc(*'FMP4')
 
@@ -19,7 +19,7 @@ def main(video_paths):
 
     # for video_path in video_paths:
     #     cap = cv2.VideoCapture(video_path)
-    #     result_video_path = video_path.replace('test', 'result')
+    #     result_video_path = video_path.replace('videos', 'result')
     #     print("Start : ", video_path)
         # video = cv2.VideoWriter(result_video_path, fourcc, 20.0, (1920, 1080))
         # f = open(result_video_path.replace('.mp4', '-skeleton3D.csv'), 'w')
