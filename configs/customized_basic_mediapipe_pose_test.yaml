@@ -1,0 +1,11 @@
+# @package _global_
+defaults:
+  - dataset_module: pose_custom_dataset
+  - architecture_module: mp_pose_archimodule
+  - hydra: hydra
+  - logger: logger
+
+project_dir: /Users/hyunw/Workspace/mediapipe-pose-python
+project_name: mediapipe-pose-python
+
+work_dir: ${hydra:runtime.cwd}

@@ -1,0 +1,2 @@
+run:
+  dir: ${work_dir}/logs/${now:%Y-%m-%d}/${now:%H-%M-%S}

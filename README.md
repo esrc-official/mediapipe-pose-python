@@ -10,9 +10,13 @@
 This project is to estimate skeletons and to analyze angles from the videos using MediaPipe Pose solution.
 
 ## Requirements
-
+The requirements for this project are:
+- Python 3.9.0
+- Mediapipe >=0.8.11
 
 ## Installation
+
+### Step 1: Clone this repository and move directory
 You can **clone** the project from the [repository](https://github.com/esrc-official/mediapipe-pose-python).
 
 ```
@@ -22,11 +26,61 @@ git clone git@github.com:esrc-official/mediapipe-pose-python.git
 // Move to the sample
 cd mediapipe-pose-python
 
-// Install third-party libraries
-pip install
+// Install third-party libraries (default)
+pip install -r requirements.txt
+// Install third-party libraries (macos m1)
+pip install -r requirements_m1.txt
 ```
+
+### Step 2: Install third-party libraries
+Please install third-party libraries using [requirements.txt](https://github.com/esrc_official/mediapipe-pose-python/blob/master/requirements.txt).
+If your environment is macos m1, you can use [requirements_m1.txt](https://github.com/esrc_official/mediapipe-pose-python/blob/master/requirements_m1.txt).
+
+```
+// Install third-party libraries (default)
+pip install -r requirements.txt
+
+// Install third-party libraries (macos m1)
+pip install -r requirements_m1.txt
+```
+
+### Step 3: Set configs for yours custom
+You can set configs you want.
+First, cust
+
+### Step 4: Copy dataset
+Please copy dataset on `dataset/pose/videos`.
+If you change the directory or video extension, please set `configs/dataset_module/pose_custom_dataset.yaml`.
+
+![img](https://github.com/esrc_official/mediapipe-pose-python/blob/master/assets/dataset_directory.png).
+
 
 ## Run project
 ```
+// Use python directly
 python main.py
+
+// Use script
+source scripts/main.sh
 ```
+
+## Package structure
+
+project tree
+
+├─configs  
+│  ├─architecture_module
+│  ├─dataset_module  
+│  ├─hydra  
+│  ├─logger
+├─datasets
+│  ├─pose
+├─logs  
+├─scripts
+└─src  
+    ├─architecture_modules  
+    │  └─models  
+    ├─dataset_modules  
+    │  └─datasets  
+    ├─engine  
+    └─utils  
