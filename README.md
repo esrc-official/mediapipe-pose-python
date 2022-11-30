@@ -9,10 +9,14 @@
 ## Introduction
 This project is to estimate skeletons and to analyze angles from the videos using MediaPipe Pose solution.
 
+<br />
+
 ## Requirements
 The requirements for this project are:
 - Python 3.9.0
 - Mediapipe >=0.8.11
+
+<br />
 
 ## Installation
 
@@ -45,17 +49,22 @@ pip install -r requirements_m1.txt
 ```
 
 ### Step 3: Set configs for yours custom
-You can set configs you want.
-First, cust
+You should change the project directory on `configs/customized_basic_mediapipe_pose_test.yaml`.
+
+
+![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/config_example.png)
 
 ### Step 4: Copy dataset
 Please copy dataset on `dataset/pose/videos`.
 If you change the directory or video extension, please set `configs/dataset_module/pose_custom_dataset.yaml`.
 
-![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/dataset_directory.png).
+![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/dataset_directory.png)
 
+<br />
 
 ## Run project
+You can run project by executing python or script.
+
 ```
 // Use python directly
 python main.py
@@ -63,6 +72,12 @@ python main.py
 // Use script
 source scripts/main.sh
 ```
+
+Then, the results are saved on `logs/${now:%Y-%m-%d}/${now:%H-%M-%S}`.
+
+![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/result_example.png)
+
+<br />
 
 ## Package structure
 
