@@ -75,7 +75,7 @@ source scripts/main.sh
 
 Then, the results are saved on `logs/${now:%Y-%m-%d}/${now:%H-%M-%S}`.
 
-![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/result_example.png)
+![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/log_example.png)
 
 <br />
 
