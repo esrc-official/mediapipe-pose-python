@@ -73,7 +73,7 @@ python main.py
 source scripts/main.sh
 ```
 
-Then, the results are saved on `logs/${now:%Y-%m-%d}/${now:%H-%M-%S}`.
+Then, the results are saved on `logs/`.
 
 ![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/log_example.png)
 
