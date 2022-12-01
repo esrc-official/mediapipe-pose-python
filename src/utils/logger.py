@@ -5,10 +5,10 @@ from tqdm import tqdm
 
 
 class Logger:
-    def __init__(self):
-        self.landmark_dir = "landmarks"
-        self.video_dir = "videos"
-        self.angle_dir = "angles"
+    def __init__(self, log_path):
+        self.landmark_dir = log_path + "/landmarks"
+        self.video_dir = log_path + "/videos"
+        self.angle_dir = log_path + "/angles"
         self.fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         self.video_extension = ".mp4"
         if not os.path.exists(self.landmark_dir):

@@ -1,1 +1,3 @@
 _target_: src.utils.logger.Logger
+
+log_path: ${project_dir}/logs
