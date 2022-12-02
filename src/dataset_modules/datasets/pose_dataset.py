@@ -7,10 +7,12 @@ from ..dataset import Dataset
 
 
 class PoseDataset(Dataset):
-    def __init__(self, data_path: str, extension: str):
+    def __init__(self, data_path: str, extension: str, flip_x: bool, flip_y: bool):
         super().__init__()
         self.extension = extension
         self.data_list = self.load_data(data_path, extension)
+        self.flip_x = flip_x
+        self.flip_y = flip_y
 
     def len(self):
         return len(self.data_list)
@@ -28,6 +30,10 @@ class PoseDataset(Dataset):
             ret, frame = capture.read()
             if not ret:
                 break
+            if self.flip_x:
+                frame = cv2.flip(frame, 1)
+            if self.flip_y:
+                frame = cv2.flip(frame, 0)
             frames.append(frame)
             data_tqdm.update(1)
         capture.release()

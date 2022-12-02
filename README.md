@@ -48,9 +48,8 @@ pip install -r requirements.txt
 pip install -r requirements_m1.txt
 ```
 
-### Step 3: Set configs for yours custom
+### Step 3: Set configs for your custom
 You should change the project directory on `configs/customized_basic_mediapipe_pose_test.yaml`.
-
 
 ![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/config_example.png)
 
@@ -59,6 +58,12 @@ Please copy dataset on `dataset/pose/videos`.
 If you change the directory or video extension, please set `configs/dataset_module/pose_custom_dataset.yaml`.
 
 ![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/dataset_directory.png)
+
+### (Optional) Step 5: Set configs for your custom dataset
+You can change configs on `configs/dataset_module/pose_custom_dataset.yaml` for your custom dataset.
+For example, you can set the value of `flip_x` to `True` if you want to flip the image vertically. 
+
+![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/dataset_module_configs.png)
 
 <br />
 
