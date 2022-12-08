@@ -7,3 +7,7 @@
 
 ### 1.0.2 (December 02, 2022)
 - Add functions to flip the image on custom dataset.
+
+### 1.0.3 (December 08, 2022)
+- Add function to select coordinate system.
+- Extract 2d landmarks in absolute coordinates, whereas 3d landmarks in relative coordinates.

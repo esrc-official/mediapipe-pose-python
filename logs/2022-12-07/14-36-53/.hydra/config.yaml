@@ -1,0 +1,18 @@
+dataset_module:
+  _target_: src.dataset_modules.datasets.pose_dataset.PoseDataset
+  data_path: ${project_dir}/datasets/pose
+  extension: .mp4
+  flip_x: false
+  flip_y: false
+architecture_module:
+  _target_: src.architecture_modules.models.mp_pose.PoseModule
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+  swap_rb: true
+  relative_coordinate: true
+logger:
+  _target_: src.utils.logger.Logger
+  log_path: ${project_dir}/logs
+project_dir: /Users/hyunw/Workspace/mediapipe-pose-python
+project_name: mediapipe-pose-python
+work_dir: ${hydra:runtime.cwd}
