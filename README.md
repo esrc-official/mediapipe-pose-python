@@ -70,7 +70,7 @@ You can change configs on `configs/architecture_module/mp_pose_archimodule.yaml`
 For example, you can set the value of `relative_coordinate` to `False` if you want to extract the landmarks on absolute coordinates.
 <b>Note that only 2d landmarks can be extracted in the absolute coordinates, whereas 3d landmarks can be extracted in the relative coordinates.</b>
 
-![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/dataset_module_configs.png)
+![img](https://github.com/esrc-official/mediapipe-pose-python/blob/master/assets/archi_module_configs.png)
 
 
 <br />
