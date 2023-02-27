@@ -80,10 +80,10 @@ You can run project by executing python or script.
 
 ```
 // Use python directly
-python main.py
+python test.py
 
 // Use script
-source scripts/main.sh
+source scripts/test.sh
 ```
 
 Then, the results are saved on `logs/`.

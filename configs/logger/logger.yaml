@@ -1,3 +1,5 @@
 _target_: src.utils.logger.Logger
 
 log_path: ${project_dir}/logs
+#log_path: ${data_dir}/data/230222_result
+#sample_name: ${sample_name}

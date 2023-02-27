@@ -22,10 +22,10 @@ ANGLES = [LEFT_ELBOW, RIGHT_ELBOW,
 LANDMARK_2D_COLUMNS = ["landmark" + str(ldx) + "_" + dim for ldx in range(33) for dim in ["x", "y"]]
 LANDMARK_3D_COLUMNS = ["landmark" + str(ldx) + "_" + dim for ldx in range(33) for dim in ["x", "y", "z"]]
 ANGLE_2D_COLUMNS = [joint + "_" + dim for joint in (
-                    ["left_elbow", "right_elbow", "left_knee", "right_knee", "left_hip", "right_hip", "left_ankle", "right_angle"])
+                    ["left_elbow", "right_elbow", "left_knee", "right_knee", "left_hip", "right_hip", "left_ankle", "right_ankle"])
                     for dim in ["roll"]]
 ANGLE_3D_COLUMNS = [joint + "_" + dim for joint in (
-                    ["left_elbow", "right_elbow", "left_knee", "right_knee", "left_hip", "right_hip", "left_ankle", "right_angle"])
+                    ["left_elbow", "right_elbow", "left_knee", "right_knee", "left_hip", "right_hip", "left_ankle", "right_ankle"])
                     for dim in ["roll", "pitch", "yaw"]]
 
 
@@ -108,23 +108,24 @@ class PoseModule(ArchiModule):
         landmarks = [np.nan for _ in range(self.n_landmarks * self.n_dims)]
         angle = [np.nan for _ in range(len(ANGLE_3D_COLUMNS))]
         # Arrange landmarks
-        for ldx, landmark in enumerate(result.pose_world_landmarks.landmark):
-            landmarks[ldx * self.n_dims] = landmark.x
-            landmarks[ldx * self.n_dims + 1] = landmark.y
-            landmarks[ldx * self.n_dims + 2] = landmark.z
+        if result.pose_world_landmarks is not None:
+            for ldx, landmark in enumerate(result.pose_world_landmarks.landmark):
+                landmarks[ldx * self.n_dims] = landmark.x
+                landmarks[ldx * self.n_dims + 1] = landmark.y
+                landmarks[ldx * self.n_dims + 2] = landmark.z
 
-            # Analyze angle
-            for adx, ldx in enumerate(ANGLES):
-                roll, pitch, yaw = self.__calc_angles_on_3d__(
-                    (landmarks[ldx[0] * self.n_dims], landmarks[ldx[0] * self.n_dims + 1],
-                     landmarks[ldx[0] * self.n_dims + 2]),
-                    (landmarks[ldx[1] * self.n_dims], landmarks[ldx[1] * self.n_dims + 1],
-                     landmarks[ldx[1] * self.n_dims + 2]),
-                    (landmarks[ldx[2] * self.n_dims], landmarks[ldx[2] * self.n_dims + 1],
-                     landmarks[ldx[2] * self.n_dims + 2]))
-                angle[adx * self.n_dims] = roll
-                angle[adx * self.n_dims + 1] = pitch
-                angle[adx * self.n_dims + 2] = yaw
+                # Analyze angle
+                for adx, ldx in enumerate(ANGLES):
+                    roll, pitch, yaw = self.__calc_angles_on_3d__(
+                        (landmarks[ldx[0] * self.n_dims], landmarks[ldx[0] * self.n_dims + 1],
+                         landmarks[ldx[0] * self.n_dims + 2]),
+                        (landmarks[ldx[1] * self.n_dims], landmarks[ldx[1] * self.n_dims + 1],
+                         landmarks[ldx[1] * self.n_dims + 2]),
+                        (landmarks[ldx[2] * self.n_dims], landmarks[ldx[2] * self.n_dims + 1],
+                         landmarks[ldx[2] * self.n_dims + 2]))
+                    angle[adx * self.n_dims] = roll
+                    angle[adx * self.n_dims + 1] = pitch
+                    angle[adx * self.n_dims + 2] = yaw
 
         return landmarks, angle
 
@@ -133,17 +134,18 @@ class PoseModule(ArchiModule):
         angle = [np.nan for _ in range(len(ANGLE_2D_COLUMNS))]
         # Arrange landmarks
         image_rows, image_cols, _ = frame.shape
-        for ldx, landmark in enumerate(result.pose_landmarks.landmark):
-            landmarks[ldx * self.n_dims] = landmark.x * image_cols
-            landmarks[ldx * self.n_dims + 1] = landmark.y * image_rows
+        if result.pose_landmarks is not None:
+            for ldx, landmark in enumerate(result.pose_landmarks.landmark):
+                landmarks[ldx * self.n_dims] = landmark.x * image_cols
+                landmarks[ldx * self.n_dims + 1] = landmark.y * image_rows
 
-            # Analyze angles
-            for adx, ldx in enumerate(ANGLES):
-                roll = self.__calc_angle_on_2d__(
-                    (landmarks[ldx[0] * self.n_dims], landmarks[ldx[0] * self.n_dims + 1]),
-                    (landmarks[ldx[1] * self.n_dims], landmarks[ldx[1] * self.n_dims + 1]),
-                    (landmarks[ldx[2] * self.n_dims], landmarks[ldx[2] * self.n_dims + 1]))
-                angle[adx] = roll
+                # Analyze angles
+                for adx, ldx in enumerate(ANGLES):
+                    roll = self.__calc_angle_on_2d__(
+                        (landmarks[ldx[0] * self.n_dims], landmarks[ldx[0] * self.n_dims + 1]),
+                        (landmarks[ldx[1] * self.n_dims], landmarks[ldx[1] * self.n_dims + 1]),
+                        (landmarks[ldx[2] * self.n_dims], landmarks[ldx[2] * self.n_dims + 1]))
+                    angle[adx] = roll
 
         return landmarks, angle
 

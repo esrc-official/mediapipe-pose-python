@@ -57,4 +57,5 @@ class PoseDataset(Dataset):
     @staticmethod
     def load_data(data_path: str, extension: str) -> List:
         data_list = glob.glob(data_path + "/videos/*" + extension)
+        # data_list = glob.glob(data_path + "/*" + extension)
         return data_list

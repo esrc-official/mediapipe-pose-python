@@ -1,6 +1,7 @@
 _target_: src.dataset_modules.datasets.pose_dataset.PoseDataset
 
 data_path: ${project_dir}/datasets/pose
+#data_path: ${data_dir}/data/230222/${sample_name}
 extension: .mp4
 flip_x: False
 flip_y: False

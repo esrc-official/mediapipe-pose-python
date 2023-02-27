@@ -7,5 +7,7 @@ defaults:
 
 project_dir: /Users/hyunw/Workspace/mediapipe-pose-python
 project_name: mediapipe-pose-python
+data_dir: /Users/hyunw/Data/KITECH
+#sample_name: 15
 
 work_dir: ${hydra:runtime.cwd}
